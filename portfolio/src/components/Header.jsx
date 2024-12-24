@@ -2,9 +2,9 @@
 function Header() {
 
   return (
-    <Header>
+    <header>
       <h1>Header</h1>
-    </Header>
+    </header>
   )
 }
 
