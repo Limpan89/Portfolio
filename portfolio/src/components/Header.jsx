@@ -1,4 +1,5 @@
 import HeaderNavItem from "./HeaderNavItem"
+import { Download } from "react-bootstrap-icons"
 
 function Header() {
 
@@ -6,7 +7,7 @@ function Header() {
     <header className="sticky-top">
       <nav className="navbar navbar-expand-lg bg-dark bottom-border border-body" data-bs-theme="dark">
         <div className="container-fluid">
-          <a className="navbar-brand" href="#">Navbar</a>
+          <a className="navbar-brand" href="#">Linus Brobäck</a>
           <button className="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
             <span className="navbar-toggler-icon"></span>
           </button>
@@ -19,7 +20,7 @@ function Header() {
               <HeaderNavItem text="Referens" />
               <HeaderNavItem text="Kontakt" />
             </ul>
-            <button className="btn btn-outline-light" type="button">Hämta CV</button>
+            <button className="btn btn-outline-light" type="button"><Download /> Hämta CV</button>
           </div>
         </div>
       </nav>
