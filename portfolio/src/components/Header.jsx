@@ -1,4 +1,5 @@
 import HeaderNavItem from "./HeaderNavItem"
+import { Download } from "react-bootstrap-icons"
 
 function Header() {
 
@@ -19,7 +20,7 @@ function Header() {
               <HeaderNavItem text="Referens" />
               <HeaderNavItem text="Kontakt" />
             </ul>
-            <button className="btn btn-outline-light" type="button">Hämta CV</button>
+            <button className="btn btn-outline-light" type="button"><Download /> Hämta CV</button>
           </div>
         </div>
       </nav>
