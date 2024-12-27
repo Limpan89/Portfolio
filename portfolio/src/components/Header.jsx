@@ -13,9 +13,9 @@ function Header() {
           </button>
           <div className="collapse navbar-collapse" id="navbarSupportedContent">
             <ul className="navbar-nav me-auto mb-2 mb-lg-0">
-              <HeaderNavItem text="Hem" />
-              <HeaderNavItem text="About Me" />
-              <HeaderNavItem text="Kunskap" />
+              <HeaderNavItem text="Hem" navLink="/" />
+              <HeaderNavItem text="About Me" navLink="/aboutme" />
+              <HeaderNavItem text="Kunskap" navLink="kunskap" />
               <HeaderNavItem text="Portfölj" />
               <HeaderNavItem text="Referens" />
               <HeaderNavItem text="Kontakt" />
