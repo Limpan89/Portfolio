@@ -1,10 +1,12 @@
-import { Link } from "react-router-dom"
+import { Link, useLocation } from "react-router-dom"
 
 function HeaderNavItem({text, navLink}) {
 
+  const location = useLocation()
+
   return (
     <li className="nav-item">
-      <Link className="nav-link" to={navLink}>{text}</Link>
+      <Link className={`nav-link ${location.pathname === navLink ? 'active' : ''}`} to={navLink}>{text}</Link>
     </li>
   )
 }
