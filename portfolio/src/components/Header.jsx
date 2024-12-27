@@ -16,7 +16,7 @@ function Header() {
               <HeaderNavItem text="Hem" navLink="/" />
               <HeaderNavItem text="About Me" navLink="/aboutme" />
               <HeaderNavItem text="Kunskap" navLink="/kunskap" />
-              <HeaderNavItem text="Portfölj" />
+              <HeaderNavItem text="Portfölj" navLink="/portfolj" />
               <HeaderNavItem text="Referens" navLink="/referens" />
               <HeaderNavItem text="Kontakt" navLink="/kontakt" />
             </ul>
