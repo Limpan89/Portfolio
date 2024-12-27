@@ -7,6 +7,7 @@ import Knowledge from './components/Knowledge'
 import { createBrowserRouter, RouterProvider, Outlet } from 'react-router-dom'
 import Contact from './components/Contact'
 import Reference from './components/Reference'
+import Portfolio from './components/Portfolio'
 
 function Layout() {
   return (
@@ -34,6 +35,10 @@ const router = createBrowserRouter([
       {
         path: '/kunskap',
         element: <Knowledge />
+      },
+      {
+        path: '/portfolj',
+        element: <Portfolio />
       },
       {
         path: '/referens',
