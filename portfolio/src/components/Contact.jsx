@@ -104,7 +104,7 @@ function Contact() {
             value={formik.values.message}
           ></textarea>
         </div>
-        <div className="col-12">
+        <div className="col-12 mb-3">
           <button className="btn btn-primary" type="submit">Skicka</button>
         </div>
       </form>
