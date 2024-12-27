@@ -5,6 +5,7 @@ import Home from './components/Home'
 import AboutMe from './components/AboutMe'
 import Knowledge from './components/Knowledge'
 import { createBrowserRouter, RouterProvider, Outlet } from 'react-router-dom'
+import Contact from './components/Contact'
 
 function Layout() {
   return (
@@ -32,6 +33,10 @@ const router = createBrowserRouter([
       {
         path: '/kunskap',
         element: <Knowledge />
+      },
+      {
+        path: '/kontakt',
+        element: <Contact />
       }
     ]
   }
