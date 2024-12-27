@@ -1,9 +1,10 @@
+import { Link } from "react-router-dom"
 
-function HeaderNavItem({text}) {
+function HeaderNavItem({text, navLink}) {
 
   return (
     <li className="nav-item">
-      <a className="nav-link" href="#">{text}</a>
+      <Link className="nav-link" to={navLink}>{text}</Link>
     </li>
   )
 }
