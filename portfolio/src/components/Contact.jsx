@@ -1,5 +1,31 @@
 import { useFormik } from 'formik'
 
+function validateForm(values) {
+  const errors = {};
+
+  if (!values.firstName) 
+    errors.firstName = 'Krävs!'
+  else if (values.firstName.length > 15)
+    errors.firstName = 'Kan vara högst 15 tecken'
+
+  if (!values.lastName)
+    errors.lastName = 'Krävs!'
+  else if (values.lastName.length > 20)
+    errors.lastName = 'Kan vara högst 20 tecken'
+
+  if (!values.email)
+    errors.firstName = 'Krävs!'
+  else if (!/^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,4}$/i.test(values.email))
+    errors.email = 'Felaktigt emailadress'
+
+  if (!values.phone)
+    errors.firstName = 'Krävs!'
+  else if (!/^(\+\d{1,2}\s?)?\(?\d{3}\)?[\s.-]?\d{3}[\s.-]?\d{4}$/i.test(values.phone))
+    errors.phone = 'Felaktigt telefonnummer'
+
+  return errors
+}
+
 function Contact() {
 
   const formik = useFormik({
@@ -10,6 +36,7 @@ function Contact() {
       phone: '',
       message: ''
     },
+    validate: validateForm,
     onSubmit: values => {
       alert(JSON.stringify(values, null, 2))
     }
@@ -29,6 +56,7 @@ function Contact() {
             onChange={formik.handleChange}
             value={formik.values.firstName}
           />
+          {formik.errors.firstName ? <div className="text-danger">{formik.errors.firstName}</div> : null}
         </div>
         <div className="col-md-6">
           <label className="form-label" htmlFor="lastName">Efternamn</label>
@@ -40,6 +68,7 @@ function Contact() {
             onChange={formik.handleChange}
             value={formik.values.lastName}
           />
+          {formik.errors.lastName ? <div className="text-danger">{formik.errors.lastName}</div> : null}
         </div>
         <div className="col-md-6">
           <label className="form-label" htmlFor="email">Email</label>
@@ -51,6 +80,7 @@ function Contact() {
             onChange={formik.handleChange}
             value={formik.values.email}
           />
+          {formik.errors.email ? <div className="text-danger">{formik.errors.email}</div> : null}
         </div>
         <div className="col-md-6">
           <label className="form-label" htmlFor="phone">Telefonummer</label>
@@ -62,6 +92,7 @@ function Contact() {
             onChange={formik.handleChange}
             value={formik.values.phone}
           />
+          {formik.errors.phone ? <div className="text-danger">{formik.errors.phone}</div> : null}
         </div>
         <div className="col-12">
           <label className="form-label" htmlFor="message">Medelande</label>
