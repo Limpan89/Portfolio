@@ -14,12 +14,12 @@ function validateForm(values) {
     errors.lastName = 'Kan vara högst 20 tecken'
 
   if (!values.email)
-    errors.firstName = 'Krävs!'
+    errors.email = 'Krävs!'
   else if (!/^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,4}$/i.test(values.email))
     errors.email = 'Felaktigt emailadress'
 
   if (!values.phone)
-    errors.firstName = 'Krävs!'
+    errors.phone = 'Krävs!'
   else if (!/^(\+\d{1,2}\s?)?\(?\d{3}\)?[\s.-]?\d{3}[\s.-]?\d{4}$/i.test(values.phone))
     errors.phone = 'Felaktigt telefonnummer'
 
@@ -38,6 +38,7 @@ function Contact() {
     },
     validate: validateForm,
     onSubmit: values => {
+      
       alert(JSON.stringify(values, null, 2))
     }
   })
