@@ -1,4 +1,4 @@
-# Portfolio
+# Portfolio för Linus Brobäck - Nackademin PROG2024
 
 Detta är ett först draft av min portfolio sida. Den innehåller en sammanfattning av min utbildning och tidigare erfarenheter och kunskaper samt lite kort om mig.
 
