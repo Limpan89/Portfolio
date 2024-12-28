@@ -1,28 +1,41 @@
 import { Wind, DropletFill, CloudSnow, Search } from 'react-bootstrap-icons'
+import { useFormik } from 'formik'
+
+function validateSearch(values) {
+  const errors = {}
+
+  if (!values.citySearch)
+    errors.citySearch = 'Ange en stad!'
+
+  return errors
+}
 
 function WeatherCard() {
 
+  const formik = useFormik({
+    initialValues: {
+      citySearch: ''
+    },
+    validate: validateSearch,
+    onSubmit: values => {
+      getWeatherData(getApiUrl(values.citySearch))
+    }
+  })
+
   // api nyckl finns bara här för att stefan enkelt ska kunna testa väderapplikationen, annars skulle den ligga undanstoppad i .env :)
   const API_KEY = "0bfa789c835c4c8badd03211242812"
-
-  function handleCitySearch(e) {
-    e.preventDefault()
-    const searchInput = e.target.querySelector("#citySearch")
-    const API_URL = getApiUrl(searchInput.value)
-    getWeatherDetails(API_URL)
-  }
 
   function getApiUrl(city) {
     return `http://api.weatherapi.com/v1/forecast.json?key=${API_KEY}&q=${city}}`
   }
 
-	async function getWeatherDetails(API_URL) {
+	async function getWeatherData(API_URL) {
 		try {
 			const response = await fetch(API_URL)
 			const data = await response.json()
+
 			console.log(data)
 		} catch (error) {
-      alert("fail")
 			console.log(error)
 		}
 	}
@@ -30,9 +43,16 @@ function WeatherCard() {
   return (
       <div className="card text-body bg-light">
         <div className="card-header">
-          <form className="d-flex justify-content-end" action="#" onSubmit={handleCitySearch}>
+          <form className="d-flex justify-content-end" action="#" onSubmit={formik.handleSubmit}>
             <label className="formLabel" htmlFor="citySearch"><Search /></label>
-            <input className="form-control" id="citySearch" type="search" placeholder="Stad ex. Stockholm" />
+            <input
+              className="form-control"
+              id="citySearch"
+              type="search"
+              placeholder="Stad ex. Stockholm"
+              onChange={formik.handleChange}
+              value={formik.values.firstName}
+            />
           </form>
         </div>
         <div className="card-body p-4">
