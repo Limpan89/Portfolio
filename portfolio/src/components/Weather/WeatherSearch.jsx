@@ -44,3 +44,5 @@ function WeatherSearch({getWeatherData}) {
         </div>
   )
 }
+
+export default WeatherSearch
