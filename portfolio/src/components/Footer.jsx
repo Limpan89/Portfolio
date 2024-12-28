@@ -5,7 +5,7 @@ import FooterIconItem from './FooterIconItem'
 function Footer() {
 
   return (
-    <footer className="bg-body-tertiary text-center fixed-bottom">
+    <footer className="bg-light text-center fixed-bottom border-top">
       <div className="container-fluid p-4 pb-0">
         <section className="mb-4">
           <FooterIconItem color="primary" link="https://www.linkedin.com/" icon={<Linkedin />} />
