@@ -4,8 +4,7 @@ import { useState } from 'react'
 
 function WeatherCard() {
 
-  //const [currentWeather, setCurrentWeather] = useState({})
-  var description = ''
+  const [currentWeather, setCurrentWeather] = useState({})
 
 	async function getWeatherData(API_URL) {
 		try {
@@ -15,13 +14,14 @@ function WeatherCard() {
       if (!response.ok)
         return
 
+      const location = data.location.name
+      const localTime = `${data.location.tz_id}: ${data.location.localtime.slice(-5)}`
       const temperature = Math.floor(data.current.temp_c)
-      description = data.current.condition.text
+      const description = data.current.condition.text
+      const humidity = data.current.humidity
+      const wind = Math.round((0.277778 * data.current.wind_kph) * 10) / 10
 
-      setCurrentWeather({temperature, description})
-
-      console.log(Math.floor(data.current.temp_c))
-      console.log(data.current.condition.text)
+      setCurrentWeather({location, localTime, temperature, description, humidity, wind})
 			console.log(data)
 		} catch (error) {
 			console.log(error)
@@ -30,25 +30,25 @@ function WeatherCard() {
 
   return (
       <div className="card bg-light">
-        <WeatherSearch />
+        <WeatherSearch getWeatherData={getWeatherData} />
         <div className="card-body p-4">
           <div className="d-flex">
-            <h6 className="flex-grow-1">Stockholm</h6>
-            <h6>13:15</h6>
+            <h6 className="flex-grow-1">{currentWeather.location}</h6>
+            <h6>{currentWeather.localTime}</h6>
           </div>
           <div className="d-flex flex-column text-center mt-5 mb-4">
-            <h6 className="display-4">27°C</h6>
-            <span className="small">{description}</span>
+            <h6 className="display-4">{currentWeather.temperature}°C</h6>
+            <span className="small">{currentWeather.description}</span>
           </div>
           <div className="d-flex align-items-center">
             <div className="flex-grow-1">
               <div>
                 <Wind />
-                <span className="ms1"> 10 m/s</span>
+                <span className="ms1"> {currentWeather.wind} m/s</span>
               </div>
               <div>
                 <DropletFill />
-                <span className="ms1"> 70% </span>
+                <span className="ms1"> {currentWeather.humidity}% </span>
               </div>
             </div>
             <div className="display-2">
