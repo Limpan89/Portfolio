@@ -3,7 +3,7 @@ import { Headset, MortarboardFill } from "react-bootstrap-icons"
 function Reference() {
 
   return (
-    <main className="container bg-light mt-5">
+    <main className="container mt-5">
       <h1 className="text-center">Referenser</h1>
       <hr />
       <article className="container row">
