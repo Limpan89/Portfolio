@@ -1,11 +1,13 @@
 # Portfolio
 
-Node.js
-Vite
+Detta är ett först draft av min portfolio sida.
 
-React js
+Projektet är skapat samt hostat lokalt med Node.js och Vite.
 
-Bootstrap
-react-bootstrap-icons
+Jag har använt mig av React js när jag byggde sidan.
 
-formik
+Formik används för att validera formulär.
+
+Bootstrap används för att styla sidan.
+
+Jag har hämtat icons från react-bootstrap-icons samt från https://devicon.dev/.

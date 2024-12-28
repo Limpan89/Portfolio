@@ -1,4 +1,3 @@
-import './KnowledgeCard.css'
 
 function KnowledgeCard({mainIcon, minorIcons, title, text}) {
 

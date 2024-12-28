@@ -43,9 +43,11 @@ function Contact() {
   })
 
   return (
-    <main className="container bg-light border mt-5">   
-      <form className="row g-3 m-2" onSubmit={formik.handleSubmit}>
-        <h1 className="text-center">Kontakt Formulär</h1>
+    <main className="container mt-5">   
+      <h1 className="text-center">Kontakt</h1>
+      <hr />
+      <form className="row g-3 bg-light border mt-1" onSubmit={formik.handleSubmit}>
+        <h4 className="text-center">Kontakt formulär</h4>
         <div className="col-md-6">
           <label className="form-label" htmlFor="firstName">Förnamn</label>
           <input 
