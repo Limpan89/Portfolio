@@ -1,7 +1,7 @@
 import { useFormik } from 'formik'
 
 function validateForm(values) {
-  const errors = {};
+  const errors = {}
 
   if (!values.firstName) 
     errors.firstName = 'Krävs!'
