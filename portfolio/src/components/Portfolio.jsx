@@ -3,8 +3,8 @@ import PortfolioCard from "./PortfolioCard"
 function Portfolio() {
 
   return (
-    <main className="container">
-      <h1 className="text-center pt-5">Portfölj</h1>
+    <main className="container mt-5">
+      <h1 className="text-center">Portfölj</h1>
       <hr />
       <div className="row d-flex justify-content-around g-3">
         <PortfolioCard

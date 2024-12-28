@@ -1,5 +1,6 @@
 import HeaderNavItem from "./HeaderNavItem"
 import { Download } from "react-bootstrap-icons"
+import { Link } from "react-router-dom"
 
 function Header() {
 
@@ -7,7 +8,7 @@ function Header() {
     <header className="sticky-top">
       <nav className="navbar navbar-expand-lg bg-dark bottom-border border-body" data-bs-theme="dark">
         <div className="container-fluid">
-          <a className="navbar-brand" href="#">Linus Brobäck</a>
+          <Link className="navbar-brand text-warning" to="/">Linus Brobäck</Link>
           <button className="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
             <span className="navbar-toggler-icon"></span>
           </button>
@@ -20,7 +21,7 @@ function Header() {
               <HeaderNavItem text="Referens" navLink="/referens" />
               <HeaderNavItem text="Kontakt" navLink="/kontakt" />
             </ul>
-            <a href="src/assets/CV.pdf" className="btn btn-outline-light" type="button"><Download /> Hämta CV</a>
+            <a href="src/assets/CV.pdf" className="btn btn-outline-light" type="button">Hämta CV <Download /></a>
           </div>
         </div>
       </nav>

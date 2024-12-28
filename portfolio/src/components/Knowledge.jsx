@@ -5,10 +5,10 @@ import { Database } from "react-bootstrap-icons"
 function Knowledge() {
 
   return (
-    <main className="container">
-      <h1 className="text-center mt-5 mb-4">Kunskap</h1>
-      <p className="lead">Jag har bekantat mig med ett antal olika teknologier och jag gillar att lära mig nya och att födjupa mig för att ständigt utvecklas. Nedan redovisar jag några av de teknologier jag är mest bekväm med.</p>
+    <main className="container mt-5">
+      <h1 className="text-center">Kunskap</h1>
       <hr />
+      <p className="lead">Jag har bekantat mig med ett antal olika teknologier och jag gillar att lära mig nya och att födjupa mig för att ständigt utvecklas. Nedan redovisar jag några av de teknologier jag är mest bekväm med.</p>
       <section className="container my-5">
         <div className="row d-flex justify-content-around g-3">
           <KnowledgeCard
