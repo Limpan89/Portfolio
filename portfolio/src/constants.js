@@ -9,3 +9,12 @@ export const weatherCodes = {
   lightning: [1087, 1279, 1282],
   'lightning-rain': [1273, 1276]
 }
+
+export const navLinks = {
+  home: '/',
+  'about-me': '/aboutme',
+  knowledge: '/kunskap',
+  portfolio: '/portfolj',
+  reference: '/referens',
+  contact: '/kontakt'
+}

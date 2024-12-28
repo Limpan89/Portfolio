@@ -14,6 +14,7 @@ function Home() {
           <img src="./src/assets/ProfileImage.jpg" alt="Profilbild" />
         </div>
         <div className="col-md-8 col-lg-6 col-xl-5">
+          <h3 className="text-center">Väder applikation</h3>
           <WeatherCard />
         </div>
       </div>
