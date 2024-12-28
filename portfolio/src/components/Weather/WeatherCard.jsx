@@ -1,5 +1,6 @@
 import { Wind, DropletFill, CloudSnow, Search } from 'react-bootstrap-icons'
 import { useFormik } from 'formik'
+import { useState } from 'react'
 
 function validateSearch(values) {
   const errors = {}
@@ -12,6 +13,12 @@ function validateSearch(values) {
 
 function WeatherCard() {
 
+  //const [currentWeather, setCurrentWeather] = useState({})
+  var description = ''
+
+  // api nyckl finns bara här för att stefan enkelt ska kunna testa väderapplikationen, annars skulle den ligga undanstoppad i .env :)
+  const API_KEY = "0bfa789c835c4c8badd03211242812"
+
   const formik = useFormik({
     initialValues: {
       citySearch: ''
@@ -22,9 +29,6 @@ function WeatherCard() {
     }
   })
 
-  // api nyckl finns bara här för att stefan enkelt ska kunna testa väderapplikationen, annars skulle den ligga undanstoppad i .env :)
-  const API_KEY = "0bfa789c835c4c8badd03211242812"
-
   function getApiUrl(city) {
     return `http://api.weatherapi.com/v1/forecast.json?key=${API_KEY}&q=${city}}`
   }
@@ -34,6 +38,16 @@ function WeatherCard() {
 			const response = await fetch(API_URL)
 			const data = await response.json()
 
+      if (!response.ok)
+        return
+
+      const temperature = Math.floor(data.current.temp_c)
+      description = data.current.condition.text
+
+      setCurrentWeather({temperature, description})
+
+      console.log(Math.floor(data.current.temp_c))
+      console.log(data.current.condition.text)
 			console.log(data)
 		} catch (error) {
 			console.log(error)
@@ -41,15 +55,15 @@ function WeatherCard() {
 	}
 
   return (
-      <div className="card text-body bg-light">
+      <div className="card bg-light">
         <div className="card-header">
-          <form className="d-flex justify-content-end" action="#" onSubmit={formik.handleSubmit}>
-            <label className="formLabel" htmlFor="citySearch"><Search /></label>
+          <form className="" action="#" onSubmit={formik.handleSubmit}>
+            <label className="form-input" htmlFor="citySearch">Stad</label>
             <input
               className="form-control"
               id="citySearch"
               type="search"
-              placeholder="Stad ex. Stockholm"
+              placeholder="ex. Stockholm"
               onChange={formik.handleChange}
               value={formik.values.firstName}
             />
@@ -62,7 +76,7 @@ function WeatherCard() {
           </div>
           <div className="d-flex flex-column text-center mt-5 mb-4">
             <h6 className="display-4">27°C</h6>
-            <span className="small">Snowy</span>
+            <span className="small">{description}</span>
           </div>
           <div className="d-flex align-items-center">
             <div className="flex-grow-1">
