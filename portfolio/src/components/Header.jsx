@@ -21,7 +21,7 @@ function Header() {
               <HeaderNavItem text="Referens" navLink="/referens" />
               <HeaderNavItem text="Kontakt" navLink="/kontakt" />
             </ul>
-            <a href="src/assets/CV.pdf" className="btn btn-outline-light" type="button"><Download /> Hämta CV</a>
+            <a href="src/assets/CV.pdf" className="btn btn-outline-light" type="button">Hämta CV <Download /></a>
           </div>
         </div>
       </nav>
