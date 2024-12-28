@@ -1,6 +1,7 @@
-import { Wind, DropletFill, CloudSnow, Search } from 'react-bootstrap-icons'
+import { Wind, DropletFill, Question, Sun, Cloud, CloudFog2 } from 'react-bootstrap-icons'
 import WeatherSearch from './WeatherSearch'
 import { useState } from 'react'
+import { weatherCodes } from '../../constants'
 
 function WeatherCard() {
 
@@ -14,14 +15,16 @@ function WeatherCard() {
       if (!response.ok)
         return
 
-      const location = data.location.name
-      const localTime = `${data.location.tz_id}: ${data.location.localtime.slice(-5)}`
+      const location = `${data.location.name}, ${data.location.country}`
+      const localTime = data.location.localtime.slice(-5)
       const temperature = Math.floor(data.current.temp_c)
       const description = data.current.condition.text
       const humidity = data.current.humidity
       const wind = Math.round((0.277778 * data.current.wind_kph) * 10) / 10
+      const weatherIcon = Object.keys(weatherCodes).find(icon => weatherCodes[icon].includes(data.current.condition.code))
 
-      setCurrentWeather({location, localTime, temperature, description, humidity, wind})
+      setCurrentWeather({location, localTime, temperature, description, humidity, wind, weatherIcon})
+      console.log(weatherIcon)
 			console.log(data)
 		} catch (error) {
 			console.log(error)
@@ -51,8 +54,14 @@ function WeatherCard() {
                 <span className="ms1"> {currentWeather.humidity}% </span>
               </div>
             </div>
-            <div className="display-2">
-              <CloudSnow />
+            <div>
+            <img
+              src={`src/assets/icons/${currentWeather.weatherIcon ? currentWeather.weatherIcon : 'question'}.svg`}
+              className=""
+              type="image/svg+xml"
+              width="75"
+              height="75"
+            />
             </div>
           </div>
         </div>
