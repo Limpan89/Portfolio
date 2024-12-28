@@ -37,8 +37,7 @@ function Contact() {
       message: ''
     },
     validate: validateForm,
-    onSubmit: values => {
-      
+    onSubmit: values => {      
       alert(JSON.stringify(values, null, 2))
     }
   })
