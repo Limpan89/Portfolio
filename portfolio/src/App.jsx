@@ -7,6 +7,7 @@ import { createBrowserRouter, RouterProvider, Outlet } from 'react-router-dom'
 import Contact from './components/Contact'
 import Reference from './components/Reference'
 import Portfolio from './components/Portfolio'
+import { navLinks } from './constants'
 
 function Layout() {
   return (
@@ -24,27 +25,27 @@ const router = createBrowserRouter([
     errorElement: <div>Error!!!</div>,
     children: [
       {
-        path: '/',
+        path: navLinks.home,
         element: <Home />
       },
       {
-        path: '/aboutme',
+        path: navLinks['about-me'],
         element: <AboutMe />
       },
       {
-        path: '/kunskap',
+        path: navLinks.knowledge,
         element: <Knowledge />
       },
       {
-        path: '/portfolj',
+        path: navLinks.portfolio,
         element: <Portfolio />
       },
       {
-        path: '/referens',
+        path: navLinks.reference,
         element: <Reference />
       },
       {
-        path: '/kontakt',
+        path: navLinks.contact,
         element: <Contact />
       }
     ]

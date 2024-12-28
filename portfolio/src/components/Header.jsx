@@ -1,6 +1,7 @@
 import HeaderNavItem from "./HeaderNavItem"
 import { Download } from "react-bootstrap-icons"
 import { Link } from "react-router-dom"
+import { navLinks } from "../constants"
 
 function Header() {
 
@@ -14,12 +15,12 @@ function Header() {
           </button>
           <div className="collapse navbar-collapse" id="navbarSupportedContent">
             <ul className="navbar-nav me-auto mb-2 mb-lg-0">
-              <HeaderNavItem text="Hem" navLink="/" />
-              <HeaderNavItem text="About Me" navLink="/aboutme" />
-              <HeaderNavItem text="Kunskap" navLink="/kunskap" />
-              <HeaderNavItem text="Portfölj" navLink="/portfolj" />
-              <HeaderNavItem text="Referens" navLink="/referens" />
-              <HeaderNavItem text="Kontakt" navLink="/kontakt" />
+              <HeaderNavItem text="Hem" navLink={navLinks.home} />
+              <HeaderNavItem text="About Me" navLink={navLinks["about-me"]} />
+              <HeaderNavItem text="Kunskap" navLink={navLinks.knowledge} />
+              <HeaderNavItem text="Portfölj" navLink={navLinks.portfolio} />
+              <HeaderNavItem text="Referens" navLink={navLinks.reference} />
+              <HeaderNavItem text="Kontakt" navLink={navLinks.contact} />
             </ul>
             <a href="src/assets/CV.pdf" className="btn btn-outline-light" type="button">Hämta CV <Download /></a>
           </div>
