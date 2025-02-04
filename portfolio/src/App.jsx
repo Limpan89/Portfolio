@@ -1,13 +1,12 @@
-import Footer from './components/Footer'
-import Header from './components/Header'
-import Home from './components/Home'
-import AboutMe from './components/AboutMe'
-import Knowledge from './components/Knowledge'
-import { createBrowserRouter, RouterProvider, Outlet } from 'react-router-dom'
-import Contact from './components/Contact'
-import Reference from './components/Reference'
-import Portfolio from './components/Portfolio'
-import { navLinks } from './constants'
+import Footer from "./components/Footer";
+import Header from "./components/Header";
+import Home from "./components/Home";
+import AboutMe from "./components/AboutMe";
+import Knowledge from "./components/Knowledge";
+import { createBrowserRouter, RouterProvider, Outlet } from "react-router-dom";
+import Reference from "./components/Reference";
+import Portfolio from "./components/Portfolio";
+import { navLinks } from "./constants";
 
 function Layout() {
   return (
@@ -16,7 +15,7 @@ function Layout() {
       <Outlet />
       <Footer />
     </>
-  )
+  );
 }
 
 const router = createBrowserRouter([
@@ -26,41 +25,34 @@ const router = createBrowserRouter([
     children: [
       {
         path: navLinks.home,
-        element: <Home />
+        element: <Home />,
       },
       {
-        path: navLinks['about-me'],
-        element: <AboutMe />
+        path: navLinks["about-me"],
+        element: <AboutMe />,
       },
       {
         path: navLinks.knowledge,
-        element: <Knowledge />
+        element: <Knowledge />,
       },
       {
         path: navLinks.portfolio,
-        element: <Portfolio />
+        element: <Portfolio />,
       },
       {
         path: navLinks.reference,
-        element: <Reference />
+        element: <Reference />,
       },
-      {
-        path: navLinks.contact,
-        element: <Contact />
-      }
-    ]
-  }
-])
+    ],
+  },
+]);
 
 function App() {
-
   return (
     <>
-      <RouterProvider router={router}>
-
-      </RouterProvider>
+      <RouterProvider router={router}></RouterProvider>
     </>
-  )
+  );
 }
 
-export default App
+export default App;

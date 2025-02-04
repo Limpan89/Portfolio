@@ -1,16 +1,28 @@
-import HeaderNavItem from "./HeaderNavItem"
-import { Download } from "react-bootstrap-icons"
-import { Link } from "react-router-dom"
-import { navLinks } from "../constants"
+import HeaderNavItem from "./HeaderNavItem";
+import { Download } from "react-bootstrap-icons";
+import { Link } from "react-router-dom";
+import { navLinks } from "../constants";
 
 function Header() {
-
   return (
     <header className="sticky-top">
-      <nav className="navbar navbar-expand-lg bg-dark bottom-border border-body" data-bs-theme="dark">
+      <nav
+        className="navbar navbar-expand-lg bg-dark bottom-border border-body"
+        data-bs-theme="dark"
+      >
         <div className="container-fluid">
-          <Link className="navbar-brand text-warning" to="/">Linus Brobäck</Link>
-          <button className="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+          <Link className="navbar-brand text-warning" to="/">
+            Linus Brobäck
+          </Link>
+          <button
+            className="navbar-toggler"
+            type="button"
+            data-bs-toggle="collapse"
+            data-bs-target="#navbarSupportedContent"
+            aria-controls="navbarSupportedContent"
+            aria-expanded="false"
+            aria-label="Toggle navigation"
+          >
             <span className="navbar-toggler-icon"></span>
           </button>
           <div className="collapse navbar-collapse" id="navbarSupportedContent">
@@ -20,14 +32,19 @@ function Header() {
               <HeaderNavItem text="Kunskap" navLink={navLinks.knowledge} />
               <HeaderNavItem text="Portfölj" navLink={navLinks.portfolio} />
               <HeaderNavItem text="Referens" navLink={navLinks.reference} />
-              <HeaderNavItem text="Kontakt" navLink={navLinks.contact} />
             </ul>
-            <a href="src/assets/CV.pdf" className="btn btn-outline-light" type="button">Hämta CV <Download /></a>
+            <a
+              href="src/assets/CV.pdf"
+              className="btn btn-outline-light"
+              type="button"
+            >
+              Hämta CV <Download />
+            </a>
           </div>
         </div>
       </nav>
     </header>
-  )
+  );
 }
 
-export default Header
+export default Header;
