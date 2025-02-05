@@ -1,7 +1,7 @@
 import HeaderNavItem from "./HeaderNavItem";
 import { Download } from "react-bootstrap-icons";
 import { Link } from "react-router-dom";
-import { navLinks } from "../constants";
+import { BASE_URL, navLinks } from "../constants";
 
 function Header() {
   return (
@@ -34,7 +34,7 @@ function Header() {
               <HeaderNavItem text="Referens" navLink={navLinks.reference} />
             </ul>
             <a
-              href="public/cv.pdf"
+              href={BASE_URL + "cv.pdf"}
               className="btn btn-outline-light"
               type="button"
               download

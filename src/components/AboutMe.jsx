@@ -1,3 +1,5 @@
+import { BASE_URL } from "../constants";
+
 function AboutMe() {
   return (
     <main className="container mt-5">
@@ -16,7 +18,7 @@ function AboutMe() {
       </p>
       <img
         className="rounded mx-auto d-block"
-        src="src/assets/profileImage.JPG"
+        src={BASE_URL + "profileImage.JPG"}
         alt="profil bild"
       />
     </main>

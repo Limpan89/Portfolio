@@ -23,3 +23,5 @@ export const navLinks = {
   reference: "/referens",
   contact: "/kontakt",
 };
+
+export const BASE_URL = import.meta.env.BASE_URL;
