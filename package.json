@@ -9,7 +9,8 @@
     "build": "vite build",
     "lint": "eslint .",
     "preview": "vite preview",
-    "predeploy": "npm run build"
+    "predeploy": "npm run build",
+    "deploy": "main -d build"
   },
   "dependencies": {
     "bootstrap": "^5.3.3",
