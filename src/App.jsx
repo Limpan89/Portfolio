@@ -3,7 +3,12 @@ import Header from "./components/Header";
 import Home from "./components/Home";
 import AboutMe from "./components/AboutMe";
 import Knowledge from "./components/Knowledge";
-import { RouterProvider, Outlet, createHashRouter } from "react-router-dom";
+import {
+  RouterProvider,
+  Outlet,
+  createHashRouter,
+  createBrowserRouter,
+} from "react-router-dom";
 import Reference from "./components/Reference";
 import Portfolio from "./components/Portfolio";
 import { navLinks } from "./constants";
@@ -18,7 +23,7 @@ function Layout() {
   );
 }
 
-const router = createHashRouter([
+const router = createBrowserRouter([
   {
     element: <Layout />,
     errorElement: <div>Error!!!</div>,
@@ -44,7 +49,6 @@ const router = createHashRouter([
         element: <Reference />,
       },
     ],
-    basename: "/Portfolio/",
   },
 ]);
 
