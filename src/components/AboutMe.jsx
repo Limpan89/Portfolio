@@ -16,7 +16,7 @@ function AboutMe() {
       </p>
       <img
         className="rounded mx-auto d-block"
-        src="src/assets/profileImage.jpg"
+        src="src/assets/profileImage.JPG"
         alt="profil bild"
       />
     </main>
