@@ -37,6 +37,7 @@ function Header() {
               href="src/assets/cv.pdf"
               className="btn btn-outline-light"
               type="button"
+              download
             >
               Hämta CV <Download />
             </a>
