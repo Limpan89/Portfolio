@@ -1,5 +1,3 @@
-import WeatherCard from "./Weather/WeatherCard";
-
 function Home() {
   return (
     <main className="container mt-5">
@@ -13,7 +11,7 @@ function Home() {
       </div>
       <div className="row d-flex justify-content-center py-5 g-3">
         <div className="col-md-8 col-lg-6 col-xl-5">
-          <img src="./src/assets/ProfileImage.jpg" alt="Profilbild" />
+          <img src="src/assets/ProfileImage.jpg" alt="Profilbild" />
         </div>
       </div>
     </main>
