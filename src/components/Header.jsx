@@ -34,7 +34,7 @@ function Header() {
               <HeaderNavItem text="Referens" navLink={navLinks.reference} />
             </ul>
             <a
-              href="src/assets/CV.pdf"
+              href="src/assets/cv.pdf"
               className="btn btn-outline-light"
               type="button"
             >

@@ -1,7 +1,6 @@
-import { Headset, MortarboardFill } from "react-bootstrap-icons"
+import { Headset, MortarboardFill } from "react-bootstrap-icons";
 
 function Reference() {
-
   return (
     <main className="container mt-5">
       <h1 className="text-center">Referenser</h1>
@@ -35,7 +34,7 @@ function Reference() {
         </div>
       </article>
     </main>
-  )
+  );
 }
 
-export default Reference
+export default Reference;

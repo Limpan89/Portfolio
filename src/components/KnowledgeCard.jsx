@@ -1,6 +1,4 @@
-
-function KnowledgeCard({mainIcon, minorIcons, title, text}) {
-
+function KnowledgeCard({ mainIcon, minorIcons, title, text }) {
   return (
     <div className="card col-12 col-md-6 col-lg-4 bg-light knowledge-card w-25 mx-1">
       <div className="display-1 text-center pt-3">{mainIcon}</div>
@@ -13,7 +11,7 @@ function KnowledgeCard({mainIcon, minorIcons, title, text}) {
         {minorIcons}
       </div>
     </div>
-  )
+  );
 }
 
-export default KnowledgeCard
+export default KnowledgeCard;

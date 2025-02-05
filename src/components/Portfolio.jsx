@@ -1,7 +1,6 @@
-import PortfolioCard from "./PortfolioCard"
+import PortfolioCard from "./PortfolioCard";
 
 function Portfolio() {
-
   return (
     <main className="container mt-5">
       <h1 className="text-center">Portfölj</h1>
@@ -27,7 +26,7 @@ function Portfolio() {
         />
       </div>
     </main>
-  )
+  );
 }
 
-export default Portfolio
+export default Portfolio;
