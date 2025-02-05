@@ -11,7 +11,7 @@ function Home() {
       </div>
       <div className="row d-flex justify-content-center py-5 g-3">
         <div className="col-md-8 col-lg-6 col-xl-5">
-          <img src="src/assets/images/profileImage.JPG" alt="Profilbild" />
+          <img src="public/profileImage.JPG" alt="Profilbild" />
         </div>
       </div>
     </main>
