@@ -16,10 +16,10 @@ export const weatherCodes = {
 };
 
 export const navLinks = {
-  home: "/Portfolio/",
-  "about-me": "/Portfolio/aboutme",
-  knowledge: "/Portfolio/kunskap",
-  portfolio: "/Portfolio/portfolj",
-  reference: "/Portfolio/referens",
-  contact: "/Portfolio/kontakt",
+  home: "/",
+  "about-me": "/aboutme",
+  knowledge: "/kunskap",
+  portfolio: "/portfolj",
+  reference: "/referens",
+  contact: "/kontakt",
 };
