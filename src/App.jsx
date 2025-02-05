@@ -20,6 +20,7 @@ function Layout() {
 
 const router = createHashRouter([
   {
+    element: <Layout />,
     errorElement: <div>Error!!!</div>,
     children: [
       {
