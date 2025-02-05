@@ -20,7 +20,6 @@ function Layout() {
 
 const router = createHashRouter([
   {
-    element: <Layout />,
     errorElement: <div>Error!!!</div>,
     children: [
       {
@@ -44,6 +43,7 @@ const router = createHashRouter([
         element: <Reference />,
       },
     ],
+    basename: "/Portfolio/",
   },
 ]);
 
